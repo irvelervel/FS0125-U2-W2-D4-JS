@@ -266,3 +266,82 @@ objArray.forEach((obj, i) => {
     console.log(obj)
   }
 })
+
+// FUNZIONI
+// una funzione è un blocco di codice riutilizzabile.
+
+// le funzioni prima vanno dichiarate, e poi vanno utilizzate (invocate)
+
+const bark = function () {
+  // il codice inserito qui dentro verrà eseguito ogni volta che
+  // la funzione verrà invocata
+  let result = 0
+  result = result + Math.random()
+  alert(result)
+}
+
+// bark()
+// bark()
+
+// una funzione eseguirà sempre lo stesso blocco di istruzioni
+const sum = function () {
+  let somma = 5 + 98 // 103
+  console.log('somma', somma)
+}
+
+sum()
+
+// PARAMETRI
+
+const specialSum = function (n1, n2 = 0) {
+  let somma = n1 + n2
+  console.log('SOMMA', somma)
+}
+
+specialSum(55, 100)
+specialSum(155, 10)
+
+specialSum(30)
+
+// VALORI DI RITORNO
+const sumWithReturn = function () {
+  let somma = 5 + 98 // 103
+  console.log('somma', somma)
+  return somma
+}
+
+console.log(sumWithReturn() + 2)
+
+const function1 = function (stringa) {
+  return stringa.toUpperCase()
+}
+
+const function2 = function (stringa) {
+  return 'Hello, ' + stringa
+}
+
+const str1 = 'stefano'
+
+function1(str1)
+function2(str1)
+
+const result = function2(function1(str1)) // 'Hello, STEFANO'
+console.log(result)
+
+const result2 = function1(function2(str1)) // 'HELLO, STEFANO'
+
+// FUNZIONI FRECCIA
+const gigio = (str1) => {
+  return str1.toUpperCase()
+}
+
+// una funzione freccia che semplicemente ritorna un valore, può fare a meno
+// contemporanemente la parola return e le graffe
+
+const gigio2 = (str1) => str1.toUpperCase()
+
+// gigio e gigio2 sono identiche nel funzionamento
+gigio2('stefano') // 'STEFANO'
+
+// la parola "this" all'interno di una funzione freccia potreste ottenere
+// un risultato diverso dalla parola "this" in una normale funzione anonima
