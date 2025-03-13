@@ -121,3 +121,148 @@ arrA.push(4)
 console.log(arrB.length) // 3
 
 // BREAK
+
+// LOGICA CONDIZIONALE
+let total = 40
+
+const fixedShippingCost = 5
+const freeShippingThreshold = 50
+
+if (total >= freeShippingThreshold) {
+  //   alert('Per te la spedizione è gratuita')
+} else {
+  // vado ad aggiungere le spedizioni al totale
+  total = total + fixedShippingCost // 45
+  //   alert('Il costo totale è' + total)
+}
+
+// TERNARY OPERATOR
+// const ternaryTotal = condizione ? se sì : se no
+const ternaryTotal =
+  total >= freeShippingThreshold
+    ? total // se sì
+    : total + fixedShippingCost // se no
+
+// le condizioni inserite in un blocco if possono essere singole (come in questo
+// caso) oppure combinate: le condizioni combinate possono richiedere la veridicità
+// di ogni parte coinvolta per ritornare true (es. "vado al mare se fa bel tempo
+// E non ho niente da fare") oppure possono richiedere la veridicità anche di
+// UNA sola delle parti coinvolte (es. "vado al cinema se è gratis O se tu vieni
+// con me").
+
+// AND -> && -> TUTTE LE CONDIZIONI COINVOLTE DEVONO ESSERE TRUE
+// OR -> || -> BASTA CHE UNA CONDIZIONE COINVOLTA SIA TRUE
+// NOT -> ! -> INVERTE IL RISULTATO DI UNA CONDIZIONE
+
+let vadoAlMare
+const faBelTempo = true
+const hoTempoLibero = true
+
+if (faBelTempo && hoTempoLibero) {
+  vadoAlMare = true
+} else {
+  vadoAlMare = false
+}
+
+let vadoAlCinema
+const eGratis = false
+const vieniConMe = true
+const seiStefano = true
+
+if (eGratis || (vieniConMe && seiStefano)) {
+  vadoAlCinema = true
+} else {
+  vadoAlCinema = false
+}
+
+// TRUTHY E FALSY
+if (myName) {
+  // ci sono entrato!
+}
+
+// TUTTI i valori in JS sono truthy a parte:
+// false
+// 0
+// -0
+// NaN
+// undefined
+// null
+// '' <-- stringa vuota
+
+// ---
+// CICLI
+// un CICLO è una struttura nella programmazione che serve a RIPETERE
+// l'esecuzione di un certo blocco di codice un numero PREDETERMINATO o
+// NON PREDETERMINATO di volte!
+
+// NUMERO NON PREDETERMINATO DI VOLTE (while, do-while)
+// es. WHILE
+
+let rand = 0
+
+let counter = 0
+
+while (rand < 8) {
+  rand = Math.floor(Math.random() * 10) // da 0 a 9
+  counter++
+}
+
+console.log('CI SONO VOLUTE ' + counter + ' VOLTE')
+
+// NUMERO PREDETERMINATO DI VOLTE (for)
+// un ciclo FOR tiene traccia con un contatore del numero di esecuzioni
+// del loop, ed esce automaticamente una volta raggiunto il limite prestabliito
+
+for (let i = 0; i < 10; i++) {
+  // 10 VOLTE
+  // la i cambia valore ad ogni volta
+  // 0
+  // 1
+  // 2
+  // 3
+  // 4
+  // 5
+  // 6
+  // 7
+  // 8
+  // 9
+  console.log('i', i)
+}
+
+const arr = ['stefano', 'giacomo', 'vittoria', 'giulia']
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i])
+}
+
+arr.forEach((element, i) => {
+  // element è stefano al primo giro
+  // element è giacomo al secondo giro
+  // element è vittoria al terzo giro
+  // element è giulia al quarto giro
+  console.log('ELEMENT', element, 'i', i)
+})
+
+const objArray = [
+  {
+    firstName: 'Gigio',
+  },
+  {
+    firstName: 'Sbirulino',
+  },
+  {
+    firstName: 'Mario',
+  },
+]
+
+objArray.forEach((obj, i) => {
+  //   console.log('OBJ', obj, i)
+  console.log(obj.firstName.toLowerCase().includes('m'))
+})
+
+objArray.forEach((obj, i) => {
+  // vuoi console loggare solo gli elementi con posizione dispari
+  if (i % 2 !== 0) {
+    console.log(obj)
+  }
+})
